@@ -27,7 +27,7 @@
 
 + ##specific_date_event
 
-  Use case: A certain time is arrived.
+  Use case: When a certain time is arrived.
 
    Grammar: arriving date DATE
 
@@ -35,20 +35,20 @@
 
   Use case: When a period of time has gone.
 
-  Grammar
+  Grammar : INTEGER_NUMBER TIME_CYCLE after contract creation
 
 + ##guaranty_event
 
   Use case:  When the target user deposit a certain amount of money to the supervised account.
 
-  Grammar: 'having deposit of' INT
+  Grammar: having deposit of INT
 
 
 + ##accumulative_view_event
 
   Use case: The resource was viewed upon accumulation of a certain amount of views.
 
-  Grammar: 'per' INT 'views'
+  Grammar: per INT views
 
 + ##settlement_event
 
@@ -60,18 +60,15 @@
  + ## Enumerate
     + TIME_CYCLE
 
-      day, week ,year, cycle
+      day, week, year, cycle
 
     + SYSTEM GROUP
 
       self: refers to author himself/herself
 
-      nodes: refers to all nodes
+      registered_users: refers to users already registered on www.freelog.com
 
       public: every one
-
-
-
 
   + ## Regular Expression
     + FEATHERACCOUNT
@@ -90,23 +87,11 @@
 
         Regular Expression :[<>_a-zA-Z]+;
 
-    + USER GROUP
-
-        USER GROUP is a group of users.
-
-        Regular Expression : group_user_['a-zA-z0-9']{4}
-
-    + USER NODE
-
-        USER NODE is a group of nodes.
-
-        Regular Expression : group_node_['a-zA-z0-9']{4}
-
 
 # Reserved words
-  * for: followed by user group, node group, domain name, or system gruop
+  * for: followed by individual user, user group, or system gruop
 
-  * initial: a initial state of a smart contract, every contract starts with state **initial **
+  * initial: a initial state of a smart contract, every contract should start with state **initial **
 
   * proceed to: followed by a state name
 
