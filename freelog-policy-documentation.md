@@ -1,59 +1,59 @@
 # Concept
-  + ####States:
+  + ##States:
     Represent a situation of a smart contract, a state can be a terminate state, an authorization  state or an intermediate state which named by the contract creator.
     An authorization  state is embraced by angle brackets.
 
-  + ####Events:
+  + ##Events:
      Represent an action that changes a state. There are multiple pre-defined events available.
      There is a special event called termiante. With
 
 # Events
-+ ####transaction_event
++ ##transaction_event
   Use case: A contract creator assigns a receiving account to accept an certain amount of money.
 
   Grammar: receiving transaction of INT to FEATHERACCOUNT
 
   Example: receiving transaction of 100 to 0x12345
 
-+ ####signing_event
++ ##signing_event
 
   Use case: The target users accept one or more aggrements required by a contract creator.
 
   Grammar: license ID
 
   Example: license LicenseResourceId
-+ ####period_event
-  Grammar: every TIME_CYCLE
++ ##period_event
+  Grammar: end of TIME_CYCLE
 
-+ ####specific_date_event
++ ##specific_date_event
 
   Use case: When a certain time is arrived.
 
    Grammar: arriving date DATE
 
-+ ####relative_date_event
++ ##relative_date_event
 
   Use case: When a period of time has gone.
 
   Grammar
 
-+ ####guaranty_event
++ ##guaranty_event
 
   Use case:  When the target user deposit a certain amount of money to the supervised account.
 
   Grammar: 'having deposit of' INT
 
 
-+ ####accumulative_view_event
++ ##accumulative_view_event
 
   Use case: The resource was viewed upon accumulation of a certain amount of views.
 
   Grammar: 'per' INT 'views'
 
-+ ####settlement_event
++ ##settlement_event
 
   pending
-+ ####pricing_agreement_event
++ ##pricing_agreement_event
   pending
 
 # Types
