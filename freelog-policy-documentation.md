@@ -41,14 +41,14 @@
 
   Use case:  When the target user deposit a certain amount of money to the supervised account.
 
-  Grammar: 'having deposit of' INT
+  Grammar: having deposit of INT
 
 
 + ##accumulative_view_event
 
   Use case: The resource was viewed upon accumulation of a certain amount of views.
 
-  Grammar: 'per' INT 'views'
+  Grammar: per INT views
 
 + ##settlement_event
 
@@ -94,13 +94,13 @@
 
         USER GROUP is a group of users.
 
-        Regular Expression : group_user_['a-zA-z0-9']{4}
+        Regular Expression : group_user_[a-zA-z0-9]{4}
 
     + USER NODE
 
         USER NODE is a group of nodes.
 
-        Regular Expression : group_node_['a-zA-z0-9']{4}
+        Regular Expression : group_node_[a-zA-z0-9]{4}
 
 
 # Reserved words
