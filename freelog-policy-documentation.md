@@ -1,63 +1,82 @@
 # Concept
-  + ##States:
+  + States:
     Represent a situation of a smart contract, a state can be a terminate state, an authorization  state or an intermediate state which named by the contract creator.
     An authorization  state is embraced by angle brackets.
 
-  + ##Events:
+  + Events:
      Represent an action that changes a state. There are multiple pre-defined events available.
      There is a special event called termiante. With
 
 # Events
-+ ##transaction_event
++ transaction_event
   Use case: A contract creator assigns a receiving account to accept an certain amount of money.
 
   Grammar: receiving transaction of INT to FEATHERACCOUNT
 
-  Example: receiving transaction of 100 to 0x12345
+  Example: receiving transaction of 100 to feth233dbc320699
 
-+ ##signing_event
++ signing_event
 
   Use case: The target users accept one or more aggrements required by a contract creator.
 
-  Grammar: accepting license ID
+  Grammar: accepting license ID (,ID)*
 
-  Example: accepting license LicenseResourceId
-+ ##period_event
-  Grammar: end of TIME_CYCLE
+  Example: accepting license e759419923ea25bf6dff2694391a1e65c21739ce,e759419923ea25bf6dff2694391a1e65c21739ce
++ period_event
 
-+ ##specific_date_event
+  Grammar: on end of INT TIMEUNIT
 
-  Use case: A certain time is arrived.
+  Example: on end of 3 cycles
 
-   Grammar: arriving date DATE
++ specific_date_event
 
-+ ##relative_date_event
+  Use case: A certain time is reached.
+
+   Grammar: at YYYY-MM-DD HH:MM(:SS)?
+
+   Example: at 2012-12-12 12:12:12
+
++ relative_date_event
 
   Use case: When a period of time has gone.
 
-  Grammar
+  Grammar after INT TIMEUNIT of contract creation
 
-+ ##guaranty_event
+  Example : after 1 cycle of contract creation
+
++ contract_guaranty_event
 
   Use case:  When the target user deposit a certain amount of money to the supervised account.
 
-  Grammar: having deposit of INT
+  Grammar: 'contract_guaranty of' INTEGER_NUMBER 'refund after' INTEGER_NUMBER TIMEUNIT
+
+  Example: contract_guaranty of 100 refund after 3 days
 
 
-+ ##accumulative_view_event
++ platform_guaranty_event
+
+  Grammar: on receiving platform_guaranty of INT
+
+  Example: on receiving platform_guaranty of 100
+
++ visit_increment_event
 
   Use case: The resource was viewed upon accumulation of a certain amount of views.
 
-  Grammar: per INT views
+  Grammar: 'visit_increment of' INTEGER_NUMBER
 
-+ ##settlement_event
+  Example: visit_increment of 123
 
-  pending
-+ ##pricing_agreement_event
++ visit_event
+
+  Grammar: 'visit of' INTEGER_NUMBER
+
+  Example: visit  of 123 
++ pricing_agreement_event
   pending
 
 # Types
- + ## Enumerate
+ +  Enumerate
     + TIME_CYCLE
 
       day, week ,year, cycle
@@ -73,7 +92,7 @@
 
 
 
-  + ## Regular Expression
+  +  Regular Expression
     + FEATHERACCOUNT
 
        FEATHERACCOUNT is an account, it is either a 13-digit phone number or e-mail address.
